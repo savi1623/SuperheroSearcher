@@ -1,5 +1,4 @@
 import React from 'react';
-import './Stats.scss';
 
 class Stats extends React.Component {
   constructor(props) {
@@ -7,7 +6,7 @@ class Stats extends React.Component {
   }
 
   render() {
-    return <div className='Stats'>Stats</div>;
+    return <div className='App'>Stats</div>;
   }
 }
 

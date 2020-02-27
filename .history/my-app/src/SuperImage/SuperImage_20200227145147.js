@@ -7,7 +7,7 @@ class SuperImage extends React.Component {
   }
 
   render() {
-    return <div className='SuperImage'>Image</div>;
+    return <div className='SuperImage'>Images</div>;
   }
 }
 

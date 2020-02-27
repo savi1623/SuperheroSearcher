@@ -1,5 +1,5 @@
 import React from 'react';
-import SuperSearch from '../SuperSearch/SuperSearch.js';
+import SuperSearch from './SuperSearch/SuperSearch.';
 import './App.css';
 
 class App extends React.Component {

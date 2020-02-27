@@ -7,7 +7,7 @@ class Work extends React.Component {
   }
 
   render() {
-    return <div className='Work'>Work</div>;
+    return <div className='App'>Work</div>;
   }
 }
 
