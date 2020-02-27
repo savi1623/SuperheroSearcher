@@ -1,5 +1,4 @@
 import React from 'react';
-import SuperSearch from '../SuperSearch/SuperSearch.js';
 import './App.css';
 
 class App extends React.Component {
@@ -10,7 +9,6 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        Search Bar Search Button
         <SuperSearch />
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
-import SuperImage from '../SuperImage/SuperImage.js';
-import SuperInfo from '../SuperInfo/SuperInfo.js';
+import SearchImage from './SearchImage/SearchImage.js';
+import SuperInfo from './SuperInfo/SuperInfo.js';
 import './SuperSearch.scss';
 
 class SuperSearch extends React.Component {
@@ -10,9 +10,9 @@ class SuperSearch extends React.Component {
 
   render() {
     return (
-      <div className='SuperSearch'>
+      <div className='App'>
         <div>Header</div>
-        <SuperImage />
+        <SearchImage />
         <SuperInfo />
       </div>
     );
