@@ -1,0 +1,78 @@
+body {
+  background: url(https://static.vecteezy.com/system/resources/previews/000/241/296/non_2x/beautiful-colorful-comic-book-background-illustration-vector.jpg)no-repeat fixed center;
+  background-size: 100%;
+}
+
+.logo {
+  margin-top: 10%;
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 80px;
+  transform: skewY(-10deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: lightgray;
+  text-shadow:
+    -1px -1px 0 firebrick,
+    -2px -2px 0 firebrick,
+    -3px -3px 0 firebrick,
+    -4px -4px 0 firebrick,
+    -5px -5px 0 firebrick,
+    -6px -6px 0 firebrick,
+    -7px -7px 0 firebrick,
+    -8px -8px 0 firebrick,
+    -30px 20px 40px dimgrey
+}
+
+.searchForm{
+  width: 500px;
+  height: 40px;
+   margin: 150px auto;
+  background: #444;
+  background: rgba(0,0,0,.2);
+  border-radius:  3px;
+  border: 1px solid #fff;
+
+  .searchBar{
+    width: 370px;
+    padding: 10px 5px;
+    float: left;
+    font-size: medium;
+    color: rgb(255, 254, 254);
+    border: 0;
+    background: transparent;
+    border-radius: 3px 0 0 3px;
+    &:focus {
+      outline: 0;
+      background:transparent;
+}}
+}
+
+
+
+
+
+.searchButton{
+  position: relative;
+  font-size: medium;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 120px;
+  color: #fff;
+  background: transparent;
+  border-left: 1px solid #fff;
+  border-radius: 0 3px 3px 0;
+  &:hover {
+    background: #fff;
+    color:#444;
+  }
+  &:active {
+    box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+  }
+  &:focus {
+    outline: 0;
+  }
+}
