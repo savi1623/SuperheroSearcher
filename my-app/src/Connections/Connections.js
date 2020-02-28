@@ -53,12 +53,14 @@ class Connections extends React.Component {
         overlayClassName="connectOverlay"
         contentLabel="Connect Modal">
         <button className='closeButton' onClick={this.closeModal}>X</button>
-        <div>
-          Group Affiliation: Batman Family, Batman Incorporated, Justice League, Outsiders, Wayne Enterprises, Club of Heroes, formerly White Lantern Corps, Sinestro Corps
+        <div className='innerText'>
+          <div>
+            Group Affiliation: Batman Family, Batman Incorporated, Justice League, Outsiders, Wayne Enterprises, Club of Heroes, formerly White Lantern Corps, Sinestro Corps
     {/* {this.state.groupAffiliation} */} </div>
-        <div>
-          Relatives: John Grayson (father, deceased), Mary Grayson (mother, deceased), Bruce Wayne / Batman (adoptive father), Damian Wayne / Robin (foster brother), Jason Todd / Red Hood (adoptive brother), Tim Drake / Red Robin (adoptive brother), Cassandra Cain / Batgirl IV (adoptive sister)
+          <div>
+            Relatives: John Grayson (father, deceased), Mary Grayson (mother, deceased), Bruce Wayne / Batman (adoptive father), Damian Wayne / Robin (foster brother), Jason Todd / Red Hood (adoptive brother), Tim Drake / Red Robin (adoptive brother), Cassandra Cain / Batgirl IV (adoptive sister)
     {/* {this.state.relatives} */}</div>
+        </div>
       </ReactModal>
     </div>;
   }

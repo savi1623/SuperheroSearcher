@@ -55,12 +55,14 @@ class Work extends React.Component {
           overlayClassName="workOverlay"
           contentLabel="Work Modal">
           <button className='closeButton' onClick={this.closeModal}>X</button>
-          <div>
-            Occupation: -
+          <div className='innerText'>
+            <div>
+              Occupation: -
     {/* {this.state.occupation} */}</div>
-          <div>
-            Base: Gotham City; formerly Bludhaven, New York City
+            <div>
+              Base: Gotham City; formerly Bludhaven, New York City
     {/* {this.state.base} */}</div>
+          </div>
         </ReactModal>
       </div>
     );
