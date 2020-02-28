@@ -20,22 +20,22 @@ class Biography extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  async componentDidMount() {
-    const { id } = this.props;
-    try {
-      const getHero = await axios.get(`${url}/${id}/biography`);
-      this.setState({
-        alterEgos: getHero.data['alter-egos'],
-        aliases: getHero.data.aliases,
-        placeOfBirth: getHero.data['place-of-birth'],
-        firstAppearance: getHero.data['first-appearance'],
-        publisher: getHero.data.publisher,
-        alignment: getHero.data.alignment
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async componentDidMount() {
+  //   const { id } = this.props;
+  //   try {
+  //     const getHero = await axios.get(`${url}/${id}/biography`);
+  //     this.setState({
+  //       alterEgos: getHero.data['alter-egos'],
+  //       aliases: getHero.data.aliases,
+  //       placeOfBirth: getHero.data['place-of-birth'],
+  //       firstAppearance: getHero.data['first-appearance'],
+  //       publisher: getHero.data.publisher,
+  //       alignment: getHero.data.alignment
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   openModal() {
     this.setState({

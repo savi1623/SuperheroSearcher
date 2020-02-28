@@ -17,36 +17,40 @@ class SuperInfo extends React.Component {
     }
   }
 
-  async componentDidMount() {
-    const { id } = this.props;
-    try {
-      const getHero = await axios.get(`${url}/${id}`);
-      this.setState({
-        superName: getHero.data.name,
-        fullName: getHero.data.biography['full-name']
-      });
-    } catch (error) {
-      console.log(error);
+  async componentDidUpdate(prevProps) {
+    if (prevProps.id !== this.props.id) {
+      console.log('click')
+      const { id } = this.props;
+      try {
+        const getHero = await axios.get(`http://localhost:5000/${id}`);
+        // this.setState({
+        //   superName: getHero.data.name,
+        //   fullName: getHero.data.biography['full-name']
+        // });
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
 
 
   render() {
+    console.log(this.state.fullName);
+    console.log(this.state.superName);
     return (
       <div className='SuperInfo'>
         <div>
-          Hero: Batman
-         {/* {this.state.superName}  */}
+          Hero: {this.state.superName}
         </div>
         <div>
-          Name: Bruce Wayne
-        {/* {this.state.fullName} */}</div>
-        <Stats id={this.props.id} />
+          Name:{this.state.fullName}
+        </div>
+        {/* <Stats id={this.props.id} />
         <Biography id={this.props.id} />
         <Apperance id={this.props.id} />
         <Work id={this.props.id} />
-        <Connections id={this.props.id} />
+        <Connections id={this.props.id} /> */}
       </div>
     );
   }

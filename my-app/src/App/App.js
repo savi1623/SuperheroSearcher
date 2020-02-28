@@ -34,6 +34,7 @@ class App extends React.Component {
 
   render() {
     const { modalIsOpen } = this.state;
+    console.log(this.state.hero);
     return (
       <div className='App'>
         <h1 className='logo'>Superhero Searcher</h1>

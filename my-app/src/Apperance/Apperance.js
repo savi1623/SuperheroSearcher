@@ -20,22 +20,24 @@ class Apperance extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  async componentDidMount() {
-    const { id } = this.props;
-    try {
-      const getHero = await axios.get(`${url}/${id}/appearance`);
-      this.setState({
-        gender: getHero.data.gender,
-        race: getHero.data.race,
-        height: getHero.data.height[0],
-        weight: getHero.data.weight[0],
-        eyeColor: getHero.data['eye-color'],
-        hairColor: getHero.data['hair-color'],
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async componentDidUpdate(prevProps) {
+  //   if (prevProps.id !== this.props.id) {
+  //     const { id } = this.props;
+  //     try {
+  //       const getHero = await axios.get(`/${id}/appearance`);
+  //       this.setState({
+  //         gender: getHero.data.gender,
+  //         race: getHero.data.race,
+  //         height: getHero.data.height[0],
+  //         weight: getHero.data.weight[0],
+  //         eyeColor: getHero.data['eye-color'],
+  //         hairColor: getHero.data['hair-color'],
+  //       });
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  // }
 
   openModal() {
     this.setState({

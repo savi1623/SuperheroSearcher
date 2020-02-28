@@ -16,18 +16,18 @@ class Connections extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  async componentDidMount() {
-    const { id } = this.props;
-    try {
-      const getHero = await axios.get(`${url}/${id}/connections`);
-      this.setState({
-        groupAffiliation: getHero.data['group-affiliation'],
-        relatives: getHero.data.relatives
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async componentDidMount() {
+  //   const { id } = this.props;
+  //   try {
+  //     const getHero = await axios.get(`${url}/${id}/connections`);
+  //     this.setState({
+  //       groupAffiliation: getHero.data['group-affiliation'],
+  //       relatives: getHero.data.relatives
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   openModal() {
     this.setState({
