@@ -65,24 +65,26 @@ class Stats extends React.Component {
           contentLabel="Stat Modal"
         >
           <button className='closeButton' onClick={this.closeModal}>X</button>
-          <div>
-            Intelligence: 100
+          <div className='innerText'>
+            <div>
+              Intelligence: 100
         {/* {this.state.intelligence} */}</div>
-          <div>
-            Strength: 24
+            <div>
+              Strength: 24
         {/* {this.state.strength} */}</div>
-          <div>
-            Speed: 28
+            <div>
+              Speed: 28
         {/* {this.state.speed} */}</div>
-          <div>
-            Durability: 54
+            <div>
+              Durability: 54
         {/* {this.state.durability} */}</div>
-          <div>
-            Power: 21
+            <div>
+              Power: 21
         {/* {this.state.power} */}</div>
-          <div>
-            Combat: 100
+            <div>
+              Combat: 100
         {/* {this.state.combat} */}</div>
+          </div>
         </ReactModal>
       </div>
     );

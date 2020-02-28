@@ -62,25 +62,27 @@ class Biography extends React.Component {
         overlayClassName="bioOverlay"
         contentLabel="Bio Modal">
         <button className='closeButton' onClick={this.closeModal}>X</button>
-        <div>
-          Alter-Egos: No alter egos found.
+        <div className='innerText'>
+          <div>
+            Alter-Egos: No alter egos found.
       {/* {this.state.alterEgos} */}</div>
-        <div>
-          Aliases:  "Insider", "Matches Malone"
+          <div>
+            Aliases:  "Insider", "Matches Malone"
       {/* {this.state.aliases} */}</div>
-        <div>
-          Place of Birth: Crest Hill, Bristol Township; Gotham County
+          <div>
+            Place of Birth: Crest Hill, Bristol Township; Gotham County
       {/* {this.state.placeOfBirth} */}
-        </div>
-        <div>
-          First Appearance: Detective Comics #27
+          </div>
+          <div>
+            First Appearance: Detective Comics #27
       {/* {this.state.firstAppearance} */}</div>
-        <div>
-          Publisher: DC Comics
+          <div>
+            Publisher: DC Comics
       {/* {this.state.publisher} */}</div>
-        <div>
-          Alignment: good
+          <div>
+            Alignment: good
       {/* {this.state.alignment} */}</div>
+        </div>
       </ReactModal>
     </div>;
   }

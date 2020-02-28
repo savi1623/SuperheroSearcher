@@ -61,24 +61,26 @@ class Apperance extends React.Component {
         overlayClassName="appearOverlay"
         contentLabel="Appear Modal">
         <button className='closeButton' onClick={this.closeModal}>X</button>
-        <div>
-          Gender: male
+        <div className='innerText'>
+          <div>
+            Gender: male
       {/* {this.state.gender} */}</div>
-        <div>
-          Race: white
+          <div>
+            Race: white
       {/* {this.state.race} */}</div>
-        <div>
-          Height: 5'10"
+          <div>
+            Height: 5'10"
        {/* {this.state.height} */}</div>
-        <div>
-          Weight: 175 lbs
+          <div>
+            Weight: 175 lbs
       {/* {this.state.weight} */}</div>
-        <div>
-          Eye Color: Blue
+          <div>
+            Eye Color: Blue
       {/* {this.state.eyeColor} */}</div>
-        <div>
-          Hair Color: Black
+          <div>
+            Hair Color: Black
       {/* {this.state.hairColor} */}</div>
+        </div>
       </ReactModal>
     </div>;
   }
