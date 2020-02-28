@@ -16,18 +16,18 @@ class Work extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  async componentDidMount() {
-    const { id } = this.props;
-    try {
-      const getHero = await axios.get(`${url}/${id}/work`);
-      this.setState({
-        occupation: getHero.data.occupation,
-        base: getHero.data.base
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async componentDidMount() {
+  //   const { id } = this.props;
+  //   try {
+  //     const getHero = await axios.get(`${url}/${id}/work`);
+  //     this.setState({
+  //       occupation: getHero.data.occupation,
+  //       base: getHero.data.base
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   openModal() {
     this.setState({
