@@ -21,13 +21,14 @@ class SuperSearch extends React.Component {
     const { hero } = this.props;
     try {
       const getHero = await axios.get(`http://localhost:5000/${hero}`);
+      console.log(getHero.data)
       this.setState({
-        id: getHero.data.id
+        id: getHero.data.hero.id,
+        idArr: getHero.data.heros
       });
     } catch (error) {
       console.log(error);
     }
-
   }
 
   newHero(e) {
@@ -37,10 +38,12 @@ class SuperSearch extends React.Component {
   }
 
   render() {
+    const { idArr } = this.state;
     return (
       <div className='SuperSearch'>
-        {this.state.idArr.map((name) =>
-          <Header name={name} newHero={this.newHero} />)}
+        {idArr.map((name) => {
+          return <Header name={name} onClick={() => this.newHero(name)} />
+        })}
         <SuperImage id={this.state.id} />
         <SuperInfo id={this.state.id} />
       </div>

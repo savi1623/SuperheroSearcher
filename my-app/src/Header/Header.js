@@ -7,7 +7,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className='Header' onClick={this.props.newHero(this.props.name)}>
+      <div className='Header' >
         {this.props.name}
       </div>
     );

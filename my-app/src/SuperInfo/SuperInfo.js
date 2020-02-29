@@ -6,7 +6,7 @@ import Apperance from '../Apperance/Apperance.js';
 import Work from '../Work/Work.js';
 import Connections from '../Connections/Connections.js';
 import './SuperInfo.scss';
-const url = 'https://superheroapi.com/api10217002715925793';
+
 
 class SuperInfo extends React.Component {
   constructor(props) {
