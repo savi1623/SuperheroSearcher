@@ -11,7 +11,8 @@ class SuperSearch extends React.Component {
     super(props);
     this.state = {
       id: '',
-      idArr: [4, 5, 6]
+      newId: '',
+      idArr: []
     }
     this.newHero = this.newHero.bind(this);
   }
@@ -33,16 +34,15 @@ class SuperSearch extends React.Component {
 
   newHero(e) {
     this.setState({
-      idArr: e
-    })
+      id: e
+    }, () => console.log(this.state.id))
   }
 
   render() {
-    const { idArr } = this.state;
     return (
       <div className='SuperSearch'>
-        {idArr.map((name) => {
-          return <Header name={name} onClick={() => this.newHero(name)} />
+        {Object.keys(this.state.idArr).map(id => {
+          return <Header name={this.state.idArr[id]} id={id} newHero={this.newHero} />
         })}
         <SuperImage id={this.state.id} />
         <SuperInfo id={this.state.id} />
