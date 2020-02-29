@@ -40,12 +40,14 @@ class SuperSearch extends React.Component {
 
   render() {
     return (
-      <div className='SuperSearch'>
-        {Object.keys(this.state.idArr).map(id => {
-          return <Header name={this.state.idArr[id]} id={id} newHero={this.newHero} />
-        })}
-        <SuperImage id={this.state.id} />
-        <SuperInfo id={this.state.id} />
+      <div >
+        <div className='Header'>
+          {Object.keys(this.state.idArr).map(id => {
+            return <Header name={this.state.idArr[id]} id={id} newHero={this.newHero} />
+          })}</div>
+        <div className='SuperSearch'>
+          <SuperImage id={this.state.id} />
+          <SuperInfo id={this.state.id} /></div>
       </div>
     );
   }

@@ -19,7 +19,9 @@ app.get('/:hero', (req, res, next) => {
       arr.map(obj => {
         heroObj[obj.id] = obj.name;
         if (obj.name.toLowerCase() === hero) {
-          resultObj.hero = obj;
+          if (resultObj.hero === undefined) {
+            resultObj.hero = obj;
+          }
         }
       })
       resultObj.heros = heroObj;
