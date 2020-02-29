@@ -69,14 +69,19 @@ class Stats extends React.Component {
           <div className='innerText'>
             <div>
               Intelligence: {this.state.intelligence}</div>
+            <br />
             <div>
               Strength: {this.state.strength}</div>
+            <br />
             <div>
               Speed:  {this.state.speed}</div>
+            <br />
             <div>
               Durability: {this.state.durability}</div>
+            <br />
             <div>
               Power:{this.state.power}</div>
+            <br />
             <div>
               Combat: {this.state.combat}</div>
           </div>

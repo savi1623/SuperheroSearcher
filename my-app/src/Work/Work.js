@@ -60,6 +60,7 @@ class Work extends React.Component {
           <div className='innerText'>
             <div>
               Occupation: {this.state.occupation}</div>
+            <br />
             <div>
               Base: {this.state.base}</div>
           </div>

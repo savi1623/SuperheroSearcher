@@ -57,6 +57,7 @@ class Connections extends React.Component {
         <div className='innerText'>
           <div>
             Group Affiliation:  {this.state.groupAffiliation} </div>
+          <br />
           <div>
             Relatives: {this.state.relatives}</div>
         </div>

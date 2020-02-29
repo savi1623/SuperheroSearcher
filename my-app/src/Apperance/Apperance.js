@@ -67,17 +67,23 @@ class Apperance extends React.Component {
           <div>
             Gender:{this.state.gender}
           </div>
+          <br />
           <div>
             Race: {this.state.race}
           </div>
+          <br />
           <div>
             Height: {this.state.height}</div>
+          <br />
           <div>
             Weight: {this.state.weight}</div>
+          <br />
           <div>
             Eye Color:  {this.state.eyeColor}</div>
+          <br />
           <div>
             Hair Color:{this.state.hairColor}</div>
+          <br />
         </div>
       </ReactModal>
     </div>;

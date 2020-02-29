@@ -67,17 +67,23 @@ class Biography extends React.Component {
         <div className='innerText'>
           <div>
             Alter-Egos:{this.state.alterEgos}</div>
+          <br />
           <div>
             Aliases: {this.state.aliases}</div>
+          <br />
           <div>
             Place of Birth: {this.state.placeOfBirth}
           </div>
+          <br />
           <div>
             First Appearance: {this.state.firstAppearance}</div>
+          <br />
           <div>
             Publisher: {this.state.publisher}</div>
+          <br />
           <div>
             Alignment:  {this.state.alignment}</div>
+          <br />
         </div>
       </ReactModal>
     </div>;
