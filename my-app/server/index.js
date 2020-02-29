@@ -14,32 +14,32 @@ app.get('/:hero', (req, res, next) => {
   axios.get(`${url}/search/${hero}`)
     .then((data) => {
       let resultObj = {};
-      let heroArr = [];
+      let heroObj = {};
       const arr = data.data.results;
       arr.map(obj => {
-        heroArr.push(obj.name);
+        heroObj[obj.id] = obj.name;
         if (obj.name.toLowerCase() === hero) {
           resultObj.hero = obj;
         }
       })
-      resultObj.heros = heroArr;
+      resultObj.heros = heroObj;
       res.send(resultObj);
     }).catch(error => {
       throw error;
     });
 })
 
-app.get('/:id', (req, res, next) => {
-  const { id } = req.params;
-  console.log(id);
-  axios.get(`${url}/${id}`)
-    .then((data) => {
-      console.log('clicked');
-      console.log(data.data)
-    }).catch(error => {
-      console.log(error);
-    });
-})
+// app.get('/:id', (req, res, next) => {
+//   const { id } = req.params;
+//   console.log(id);
+//   axios.get(`${url}/${id}`)
+//     .then((data) => {
+//       console.log('clicked');
+//       console.log(data.data)
+//     }).catch(error => {
+//       console.log(error);
+//     });
+// })
 
 app.get('/:id/image', (req, res, next) => {
   const { id } = req.params;
