@@ -13,12 +13,17 @@ app.get('/:hero', (req, res, next) => {
   const { hero } = req.params
   axios.get(`${url}/search/${hero}`)
     .then((data) => {
+      let resultObj = {};
+      let heroArr = [];
       const arr = data.data.results;
       arr.map(obj => {
+        heroArr.push(obj.name);
         if (obj.name.toLowerCase() === hero) {
-          res.send(obj)
+          resultObj.hero = obj;
         }
       })
+      resultObj.heros = heroArr;
+      res.send(resultObj);
     }).catch(error => {
       throw error;
     });
