@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import SuperImage from '../SuperImage/SuperImage.js';
 import SuperInfo from '../SuperInfo/SuperInfo.js';
+import Header from '../Header/Header.js'
 import './SuperSearch.scss';
 // const url = 'https://superheroapi.com/api/10217002715925793/search';
 
@@ -9,8 +10,10 @@ class SuperSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: ''
+      id: '',
+      idArr: [4, 5, 6]
     }
+    this.newHero = this.newHero.bind(this);
   }
 
   async componentDidMount() {
@@ -27,10 +30,17 @@ class SuperSearch extends React.Component {
 
   }
 
+  newHero(e) {
+    this.setState({
+      idArr: e
+    })
+  }
+
   render() {
     return (
       <div className='SuperSearch'>
-        {/* <div>Header</div> */}
+        {this.state.idArr.map((name) =>
+          <Header name={name} newHero={this.newHero} />)}
         <SuperImage id={this.state.id} />
         <SuperInfo id={this.state.id} />
       </div>
