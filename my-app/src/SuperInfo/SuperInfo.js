@@ -39,12 +39,13 @@ class SuperInfo extends React.Component {
     console.log(this.state.superName);
     return (
       <div className='SuperInfo'>
-        <div>
-          Hero: {this.state.superName}
+        <div className='hero'>
+          {this.state.superName}
         </div>
-        <div>
-          Name:{this.state.fullName}
+        <div className='heroName'>
+          {this.state.fullName}
         </div>
+        <br />
         <Stats id={this.props.id} />
         <Biography id={this.props.id} />
         <Apperance id={this.props.id} />

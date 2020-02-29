@@ -1,18 +1,27 @@
+.Appearance{
+  margin-bottom: 2%;
+}
+
 .appearModal{
   position: fixed;
   top: 50%;
-  left: 50%;
-  right: auto;
+  left: 70%;
+    right: auto;
   bottom: auto;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   font-size: x-large;
   width: 400px;
   max-width: 100%;
-  height: 300px;
+  height: 500px;
   max-height: 100%;
   padding: 10px;
-  background-color: white;
+  background: gray;
+  border: none;
+}
+.appearModal:focus{
+  border:none;
+  outline: none;
 }
 
 .appearOverlay{
@@ -22,10 +31,14 @@
   right: 0;
   bottom: 0;
 }
+.appearOverlay:focus{
+  border: none
+}
 
 .infoButton{
   border-radius: 50%;
   font-size: large;
+  outline: none;
 }
 
 .infoButton:hover {
