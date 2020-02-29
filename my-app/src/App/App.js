@@ -1,5 +1,6 @@
 import React from 'react';
 import SuperSearch from '../SuperSearch/SuperSearch.js';
+import Index from '../Index/Index.js';
 import ReactModal from 'react-modal';
 import './App.scss';
 
@@ -42,6 +43,8 @@ class App extends React.Component {
           <input className='searchBar' type='text' onChange={this.onChange} />
           <button className='searchButton' onClick={this.openModal}>Search</button>
         </div>
+        <div>Search By Name</div>
+        <Index hero={this.state.hero} />
         <ReactModal
           isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}

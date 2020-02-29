@@ -31,17 +31,27 @@ app.get('/:hero', (req, res, next) => {
     });
 })
 
-// app.get('/:id', (req, res, next) => {
-//   const { id } = req.params;
-//   console.log(id);
-//   axios.get(`${url}/${id}`)
-//     .then((data) => {
-//       console.log('clicked');
-//       console.log(data.data)
-//     }).catch(error => {
-//       console.log(error);
-//     });
-// })
+app.get('/index/heros', (req, res, next) => {
+  let id = 1;
+  let indexObj = {}
+  while (id < 732)
+    //async issue here
+    axios.get(`${url}/${id}`)
+      .then((data) => {
+        console.log(data.data.id)
+        let hero = data.data;
+        indexObj[hero.id] = hero.name
+      }).catch(error => {
+        // console.log(error);
+      });
+  if (id === 731) {
+    res.send(indexObj);
+  } else {
+    id++
+  }
+
+}
+})
 
 app.get('/:id/image', (req, res, next) => {
   const { id } = req.params;
@@ -67,7 +77,6 @@ app.get('/:id/biography', (req, res, next) => {
   const { id } = req.params;
   axios.get(`${url}/${id}/biography`)
     .then((data) => {
-      console.log(data.data)
       res.send(data.data)
     }).catch(error => {
       throw error;
