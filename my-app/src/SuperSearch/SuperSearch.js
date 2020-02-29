@@ -35,7 +35,7 @@ class SuperSearch extends React.Component {
   newHero(e) {
     this.setState({
       id: e
-    }, () => console.log(this.state.id))
+    })
   }
 
   render() {
