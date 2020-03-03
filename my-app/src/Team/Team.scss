@@ -1,7 +1,8 @@
-.Team{
-  display: inline-grid;
-  grid-template-columns: 5% 15% 15% 15% 15% 15% 15% 5%;
-  grid-gap: 10px;
-  height: 100%;
-  width:100%;
+.teamTitle{
+  text-align: center;
+  color: white;
+  font: bold 52px Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px #fe4902,
+               2px 2px #fe4902,
+               3px 3px #fe4902;
 }

@@ -16,8 +16,9 @@ class SuperImage extends React.Component {
       const { id } = this.props;
       try {
         const getHero = await axios.get(`http://localhost:5000/${id}/image`);
+        // console.log(getHero.data)
         this.setState({
-          image: getHero.data
+          image: getHero.data.url
         });
       } catch (error) {
         console.log(error);
