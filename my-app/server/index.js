@@ -42,7 +42,7 @@ app.get('/:id/image', (req, res, next) => {
   const { id } = req.params;
   axios.get(`${url}/${id}/image`)
     .then((data) => {
-      res.send(data.data.url);
+      res.send(data.data);
     }).catch(error => {
       throw error;
     });

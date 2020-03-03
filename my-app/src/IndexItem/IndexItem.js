@@ -1,4 +1,5 @@
 import React from 'react';
+import './IndexItem.scss'
 
 class IndexItem extends React.Component {
   constructor(props) {
@@ -9,9 +10,8 @@ class IndexItem extends React.Component {
   render() {
     const hero = this.props.hero.toLowerCase();
     return (
-      <div className='indexItem'>
-        <button onClick={() => this.props.changeHero(hero)}>{this.props.hero}</button>
-
+      <div >
+        <button className='indexItem' onClick={() => this.props.changeHero(hero)}>{this.props.hero}</button>
       </div >
     )
   }

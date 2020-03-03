@@ -1,0 +1,10 @@
+.TeamMember{
+  display: inline-grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 50px;
+}
+
+.teamName {
+  font-size: xx-large;
+  color: white;
+}
