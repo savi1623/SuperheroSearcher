@@ -31,27 +31,26 @@ app.get('/:hero', (req, res, next) => {
     });
 })
 
-app.get('/index/heros', (req, res, next) => {
-  let id = 1;
-  let indexObj = {}
-  while (id < 732)
-    //async issue here
-    axios.get(`${url}/${id}`)
-      .then((data) => {
-        console.log(data.data.id)
-        let hero = data.data;
-        indexObj[hero.id] = hero.name
-      }).catch(error => {
-        // console.log(error);
-      });
-  if (id === 731) {
-    res.send(indexObj);
-  } else {
-    id++
-  }
-
-}
-})
+// app.get('/index/heros', (req, res, next) => {
+//   let indexObj = {}
+//   const innerFunc = async () => {
+//     let id = 1;
+//     while (id < 732) {
+//       const getHero = await axios.get(`${url}/${id}`)
+//       console.log(getHero.data.id)
+//       let hero = getHero.data;
+//       indexObj[hero.id] = hero.name
+//       id++
+//     }
+//     console.log(indexObj);
+//     return indexObj;
+//   }
+//   innerFunc()
+//     .then((data) => {
+//       console.log(data)
+//       res.send(data.indexObj)
+//     })
+// })
 
 app.get('/:id/image', (req, res, next) => {
   const { id } = req.params;

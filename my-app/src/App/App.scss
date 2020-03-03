@@ -27,7 +27,7 @@ body {
 .searchForm{
   width: 500px;
   height: 40px;
-   margin: 150px auto;
+  margin: 75px auto;
   background: #444;
   background: rgba(0,0,0,.2);
   border-radius:  3px;
@@ -87,7 +87,8 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: gray;
+  // background: gray;
+  background: url("https://portsmouthcomiccon.com/wp-content/uploads/2017/09/background-comic.jpg");
   overflow-y: scroll;
 }
 
@@ -99,6 +100,124 @@ body {
   bottom: 0;
   width: 100%;
   height: 100%
+}
+
+.TeamModal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: url("https://majorspoilers.com/wp-content/uploads/2011/02/Major-Spoilers-Logo-and-Background-20101.jpg");
+  overflow-y: scroll;
+}
+
+.TeamOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%
+}
+
+.teamButton{
+  margin-left: 35%;
+  font-size: large;
+  position: relative;
+  cursor: pointer;
+  background: darkblue;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid black;
+  padding: 0.5em 1em;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #40c6ff;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #40c6ff;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+
+.indexButton{
+  margin-left: 5%;
+  font-size: large;
+  position: relative;
+  cursor: pointer;
+  background: darkblue;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid black;
+  padding: 0.5em 1em;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #40c6ff;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #40c6ff;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
 }
 
 .outer {
