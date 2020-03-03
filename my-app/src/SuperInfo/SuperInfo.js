@@ -52,7 +52,7 @@ class SuperInfo extends React.Component {
         <Work id={this.props.id} />
         <Connections id={this.props.id} />
         <br />
-        <button className='addToTeam'>  Add to Team </button>
+        <button className='addToTeam' onClick={() => this.props.addToTeam(this.props.id)}>  Add to Team </button>
       </div>
     );
   }

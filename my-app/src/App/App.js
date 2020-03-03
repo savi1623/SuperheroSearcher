@@ -12,6 +12,7 @@ class App extends React.Component {
       modalIsOpen: false,
       teamIsOpen: false,
       indexOpen: false,
+      team: [604, 711, 123],
       hero: 'batman',
     };
     this.onChange = this.onChange.bind(this);
@@ -22,6 +23,13 @@ class App extends React.Component {
     this.openIndex = this.openIndex.bind(this);
     this.closeIndex = this.closeIndex.bind(this);
     this.changeHero = this.changeHero.bind(this);
+    this.addToTeam = this.addToTeam.bind(this);
+  }
+
+  addToTeam(e) {
+    this.setState({
+      team: [...this.state.team, e]
+    }, () => console.log(this.state.team))
   }
 
   onChange(e) {
@@ -103,7 +111,7 @@ class App extends React.Component {
             <div className='inner'></div>
             <label onClick={this.closeModal}>Back</label>
           </div>
-          <SuperSearch hero={this.state.hero} />
+          <SuperSearch hero={this.state.hero} addToTeam={this.addToTeam} />
         </ReactModal>
         <ReactModal
           isOpen={this.state.teamIsOpen}
@@ -116,7 +124,7 @@ class App extends React.Component {
             <div className='inner'></div>
             <label onClick={this.closeTeam}>Back</label>
           </div>
-          <Team />
+          <Team team={this.state.team} />
         </ReactModal>
       </div>
     );

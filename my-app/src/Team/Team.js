@@ -5,13 +5,13 @@ import './Team.scss'
 class Team extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      team: [644, 507, 123, 711, 1, 2]
-    }
+    // this.state = {
+    //   team: [644, 507, 123, 711, 1, 2]
+    // }
   }
 
   render() {
-    const { team } = this.state;
+    const { team } = this.props;
     return (
       <div className="Team">
         <div className='teamTitle'>
