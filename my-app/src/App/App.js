@@ -11,17 +11,26 @@ class App extends React.Component {
     this.state = {
       modalIsOpen: false,
       teamIsOpen: false,
+      indexOpen: false,
       hero: 'batman',
     };
     this.onChange = this.onChange.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openTeam = this.openTeam.bind(this);
-    this.closeTeam = this.closeModal.bind(this);
+    this.closeTeam = this.closeTeam.bind(this);
+    this.openIndex = this.openIndex.bind(this);
+    this.closeIndex = this.closeIndex.bind(this);
+    this.changeHero = this.changeHero.bind(this);
   }
 
   onChange(e) {
     this.setState({ hero: e.target.value });
+  }
+
+  changeHero(e) {
+    // console.log(e)
+    this.setState({ hero: e }, () => this.openModal())
   }
 
   openModal() {
@@ -48,6 +57,18 @@ class App extends React.Component {
     })
   }
 
+  openIndex() {
+    this.setState({
+      indexOpen: true
+    })
+  }
+
+  closeIndex() {
+    this.setState({
+      indexOpen: false
+    })
+  }
+
   render() {
     const { modalIsOpen } = this.state;
     return (
@@ -59,9 +80,18 @@ class App extends React.Component {
         </div>
         <div className='buttonInline'>
           <button className='teamButton' onClick={this.openTeam}>Show Team</button>
-          <button className='indexButton'> Hero Index</button></div>
-        {/*
-        <Index hero={this.state.hero} /> */}
+          <button className='indexButton' onClick={this.openIndex}> Hero Index</button></div>
+        <ReactModal isOpen={this.state.indexOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeIndex}
+          className="indexModal"
+          overlayClassName="indexOverlay"
+          contentLabel="Index Modal">
+          <div className='outer'>
+            <div className='inner'></div>
+            <label onClick={this.closeIndex}>Back</label>
+          </div>
+          <Index hero={this.state.hero} changeHero={this.changeHero} /> </ReactModal>
         <ReactModal
           isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -73,7 +103,7 @@ class App extends React.Component {
             <div className='inner'></div>
             <label onClick={this.closeModal}>Back</label>
           </div>
-          <SuperSearch superShow={this.state.superShow} hero={this.state.hero} />
+          <SuperSearch hero={this.state.hero} />
         </ReactModal>
         <ReactModal
           isOpen={this.state.teamIsOpen}
