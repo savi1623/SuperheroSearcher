@@ -31,26 +31,12 @@ app.get('/:hero', (req, res, next) => {
     });
 })
 
-// app.get('/index/heros', (req, res, next) => {
-//   let indexObj = {}
-//   const innerFunc = async () => {
-//     let id = 1;
-//     while (id < 732) {
-//       const getHero = await axios.get(`${url}/${id}`)
-//       console.log(getHero.data.id)
-//       let hero = getHero.data;
-//       indexObj[hero.id] = hero.name
-//       id++
-//     }
-//     console.log(indexObj);
-//     return indexObj;
-//   }
-//   innerFunc()
-//     .then((data) => {
-//       console.log(data)
-//       res.send(data.indexObj)
-//     })
-// })
+app.get('/index/heros', (req, res, next) => {
+  axios.get(`https://akabab.github.io/superhero-api/api/all.json`)
+    .then(data => {
+      res.send(data.data)
+    })
+})
 
 app.get('/:id/image', (req, res, next) => {
   const { id } = req.params;
