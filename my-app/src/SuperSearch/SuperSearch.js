@@ -47,7 +47,7 @@ class SuperSearch extends React.Component {
           })}</div>
         <div className='SuperSearch'>
           <SuperImage id={this.state.id} />
-          <SuperInfo id={this.state.id} /></div>
+          <SuperInfo id={this.state.id} addToTeam={this.props.addToTeam} /></div>
       </div>
     );
   }
