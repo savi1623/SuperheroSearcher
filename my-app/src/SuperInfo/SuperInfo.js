@@ -51,6 +51,8 @@ class SuperInfo extends React.Component {
         <Apperance id={this.props.id} />
         <Work id={this.props.id} />
         <Connections id={this.props.id} />
+        <br />
+        <button className='addToTeam'>  Add to Team </button>
       </div>
     );
   }
