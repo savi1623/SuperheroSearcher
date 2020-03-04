@@ -101,7 +101,7 @@ app.get('/:id/work', (req, res, next) => {
 
 app.get('/team/team', db.getTeam)
 
-// app.post('/team/team', db.newMember)
+app.post('/team/:id', db.newMember)
 
 app.delete('/team/:id', db.deleteHero)
 
