@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import SuperSearch from '../SuperSearch/SuperSearch.js';
 import Index from '../Index/Index.js';
 import Team from '../Team/Team.js'
@@ -26,10 +27,22 @@ class App extends React.Component {
     this.addToTeam = this.addToTeam.bind(this);
   }
 
-  addToTeam(e) {
+  async componentDidMount() {
+    const getHero = await axios.get(`http://localhost:5000/team/team`);
+    // console.log(getHero.data);
     this.setState({
-      team: [...this.state.team, e]
-    })
+      team: getHero.data.heros
+    });
+  }
+
+  addToTeam(e) {
+    // this.setState({
+    //   team: [...this.state.team, e]
+    // })
+    axios.post(`http://localhost:5000/team/${e}`)
+      .then(() =>
+        this.componentDidMount()
+      )
   }
 
   onChange(e) {

@@ -29,12 +29,27 @@ function getTeam(req, res, next) {
       res.status(200).json({
         heros: data
       })
-    })
+    }).catch(function (err) {
+      return next(err);
+    });
 }
 
-// function newMember(req, res, next) {
-
-// }
+function newMember(req, res, next) {
+  const hero_id = parseInt(req.params.id);
+  db.one(`Select (id) from heros where hero_id =${hero_id}`)
+    .then(data => {
+      // console.log(data)
+      const hero = data.id;
+      db.none(`INSERT into team(hero_id, user_id) VALUES (${hero}, 1)`)
+    }).then(data => {
+      res.status(201).json({
+        status: 'success',
+        message: 'Inserted Hero',
+      });
+    }).catch(function (err) {
+      return next(err);
+    });
+}
 
 function deleteHero(req, res, next) {
   const id = parseInt(req.params.id);
@@ -56,6 +71,6 @@ function deleteHero(req, res, next) {
 
 module.exports = {
   getTeam: getTeam,
-  // newMember: newMember,
+  newMember: newMember,
   deleteHero: deleteHero
 };
