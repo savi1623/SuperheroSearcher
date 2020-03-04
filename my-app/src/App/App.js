@@ -29,7 +29,7 @@ class App extends React.Component {
   addToTeam(e) {
     this.setState({
       team: [...this.state.team, e]
-    }, () => console.log(this.state.team))
+    })
   }
 
   onChange(e) {

@@ -3,6 +3,7 @@ const axios = require('axios');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const db = require('./db/controllers.js');
 const url = 'https://superheroapi.com/api/10217002715925793';
 
 const port = 5000;
@@ -97,6 +98,12 @@ app.get('/:id/work', (req, res, next) => {
       throw error;
     });
 })
+
+app.get('/team/team', db.getTeam)
+
+// app.post('/team/team', db.newMember)
+
+app.delete('/team/:id', db.deleteHero)
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
