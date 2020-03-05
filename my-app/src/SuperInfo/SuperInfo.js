@@ -21,7 +21,8 @@ class SuperInfo extends React.Component {
     if (prevProps.id !== this.props.id) {
       const { id } = this.props;
       try {
-        const getHero = await axios.get(`http://localhost:5000/${id}/biography`);
+        const getHero = await axios.get(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+        :5000/${id}/biography`);
         this.setState({
           superName: getHero.data.name,
           fullName: getHero.data['full-name']
