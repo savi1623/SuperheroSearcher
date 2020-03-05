@@ -24,7 +24,8 @@ class Apperance extends React.Component {
     if (prevProps.id !== this.props.id) {
       const { id } = this.props;
       try {
-        const getHero = await axios.get(`http://localhost:5000/${id}/appearance`);
+        const getHero = await axios.get(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+        :5000/${id}/appearance`);
         this.setState({
           gender: getHero.data.gender,
           race: getHero.data.race,

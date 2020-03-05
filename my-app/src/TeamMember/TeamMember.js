@@ -16,7 +16,13 @@ class TeamMember extends React.Component {
   async componentDidMount() {
     const { hero } = this.props;
     try {
+<<<<<<< HEAD
       const getHero = await axios.get(`http://localhost:5000/${hero}/image`);
+=======
+      const getHero = await axios.get(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+      :5000/${hero}/image`);
+      // console.log(getHero.data)
+>>>>>>> 40fc00a... updated server routes
       this.setState({
         image: getHero.data.url,
         name: getHero.data.name,

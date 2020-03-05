@@ -21,7 +21,8 @@ class SuperSearch extends React.Component {
     // if (prevProps.hero !=÷= this.props.hero) {
     const { hero } = this.props;
     try {
-      const getHero = await axios.get(`http://localhost:5000/${hero}`);
+      const getHero = await axios.get(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+      :5000/${hero}`);
       console.log(getHero.data)
       this.setState({
         id: getHero.data.hero.id,
