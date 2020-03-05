@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  // "proxy": "https://superheroapi.com/api/10217002715925793",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -31,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon ./server/index.js"
+    "server": "nodemon ./server/index.js",
+    "dev": "concurrently \"npm start\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": "react-app"
