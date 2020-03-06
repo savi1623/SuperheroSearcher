@@ -39,7 +39,8 @@ class App extends React.Component {
     // this.setState({
     //   team: [...this.state.team, e]
     // })
-    axios.post(`http://localhost:5000/team/${e}`)
+    axios.post(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+    :5000/team/${e}`)
       .then(() =>
         this.componentDidMount()
       )
