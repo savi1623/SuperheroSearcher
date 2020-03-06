@@ -17,7 +17,6 @@ class TeamMember extends React.Component {
     const { hero } = this.props;
     try {
       const getHero = await axios.get(`http://localhost:5000/${hero}/image`);
-      // console.log(getHero.data)
       this.setState({
         image: getHero.data.url,
         name: getHero.data.name,
