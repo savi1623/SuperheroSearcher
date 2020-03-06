@@ -20,7 +20,8 @@ class Work extends React.Component {
     if (prevProps.id !== this.props.id) {
       const { id } = this.props;
       try {
-        const getHero = await axios.get(`http://localhost:5000/${id}/work`);
+        const getHero = await axios.get(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+        :5000/${id}/work`);
         this.setState({
           occupation: getHero.data.occupation,
           base: getHero.data.base

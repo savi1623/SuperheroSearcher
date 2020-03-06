@@ -19,7 +19,8 @@ class Connections extends React.Component {
     if (prevProps.id !== this.props.id) {
       const { id } = this.props;
       try {
-        const getHero = await axios.get(`http://localhost:5000/${id}/connections`);
+        const getHero = await axios.get(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+        :5000/${id}/connections`);
         this.setState({
           groupAffiliation: getHero.data['group-affiliation'],
           relatives: getHero.data.relatives

@@ -28,7 +28,8 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const getHero = await axios.get(`http://localhost:5000/team/team`);
+    const getHero = await axios.get(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+    :5000/team/team`);
     // console.log(getHero.data);
     this.setState({
       team: getHero.data.heros
@@ -39,7 +40,8 @@ class App extends React.Component {
     // this.setState({
     //   team: [...this.state.team, e]
     // })
-    axios.post(`http://localhost:5000/team/${e}`)
+    axios.post(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
+    :5000/team/${e}`)
       .then(() =>
         this.componentDidMount()
       )
