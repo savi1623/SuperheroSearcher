@@ -3,14 +3,15 @@ import axios from 'axios';
 import ReactModal from 'react-modal';
 import './Work.scss';
 
+
 class Work extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       modalIsOpen: false,
       occupation: '',
-      base: '',
-    };
+      base: ''
+    }
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -19,10 +20,10 @@ class Work extends React.Component {
     if (prevProps.id !== this.props.id) {
       const { id } = this.props;
       try {
-        const getHero = await axios.get(`http://localhost:4000/${id}/work`);
+        const getHero = await axios.get(`http://localhost:5000/${id}/work`);
         this.setState({
           occupation: getHero.data.occupation,
-          base: getHero.data.base,
+          base: getHero.data.base
         });
       } catch (error) {
         console.log(error);
@@ -32,39 +33,36 @@ class Work extends React.Component {
 
   openModal() {
     this.setState({
-      modalIsOpen: true,
-    });
+      modalIsOpen: true
+    })
   }
 
   closeModal() {
     this.setState({
-      modalIsOpen: false,
-    });
+      modalIsOpen: false
+    })
   }
 
   render() {
     const { modalIsOpen } = this.state;
-    console.log(this.props.id);
+    console.log(this.props.id)
     return (
-      <div className='Work'>
-        Work
-        <button className='infoButton' onClick={this.openModal}>
-          +
-        </button>
+      <div className='Work'>Work
+    <button className='infoButton' onClick={this.openModal}>+</button>
         <ReactModal
           isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          className='workModal'
-          overlayClassName='workOverlay'
-          contentLabel='Work Modal'>
-          <button className='closeButton' onClick={this.closeModal}>
-            X
-          </button>
+          className="workModal"
+          overlayClassName="workOverlay"
+          contentLabel="Work Modal">
+          <button className='closeButton' onClick={this.closeModal}>X</button>
           <div className='innerText'>
-            <div>Occupation: {this.state.occupation}</div>
+            <div>
+              Occupation: {this.state.occupation}</div>
             <br />
-            <div>Base: {this.state.base}</div>
+            <div>
+              Base: {this.state.base}</div>
           </div>
         </ReactModal>
       </div>

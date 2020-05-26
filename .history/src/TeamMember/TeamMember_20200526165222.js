@@ -16,24 +16,7 @@ class TeamMember extends React.Component {
   async componentDidMount() {
     const { hero } = this.props;
     try {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      const getHero = await axios.get(`http://localhost:5000/${hero}/image`);
-<<<<<<< HEAD
-=======
-      const getHero = await axios.get(`http://ec2-54-153-66-212.us-west-1.compute.amazonaws.com
-      :5000/${hero}/image`);
-      // console.log(getHero.data)
->>>>>>> 40fc00a... updated server routes
-      this.setState({
-        image: getHero.data.url,
-        name: getHero.data.name,
-        id: getHero.data.id
-      }, () => console.log(this.state));
-=======
-=======
       const getHero = await axios.get(`http://localhost:4000/${hero}/image`);
->>>>>>> 4e75767... updated port numbers
       this.setState(
         {
           image: getHero.data.url,
@@ -42,7 +25,6 @@ class TeamMember extends React.Component {
         },
         () => console.log(this.state)
       );
->>>>>>> e127afb... added Knex as a way to connecto to heroku
     } catch (error) {
       console.log(error);
     }
