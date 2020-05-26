@@ -6,7 +6,7 @@ class Team extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // team: [644, 507, 123, 711, 1, 2],
+      team: [644, 507, 123, 711, 1, 2],
     };
   }
 

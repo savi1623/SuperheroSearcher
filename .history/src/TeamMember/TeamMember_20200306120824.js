@@ -1,6 +1,6 @@
 import React from 'react';
-import axios from 'axios';
-import './TeamMember.scss';
+import axios from 'axios'
+import './TeamMember.scss'
 
 class TeamMember extends React.Component {
   constructor(props) {
@@ -8,8 +8,8 @@ class TeamMember extends React.Component {
     this.state = {
       image: '',
       name: '',
-      id: 0,
-    };
+      id: 0
+    }
     // this.deleteHero = this.deleteHero.bind(this)
   }
 
@@ -17,14 +17,11 @@ class TeamMember extends React.Component {
     const { hero } = this.props;
     try {
       const getHero = await axios.get(`http://localhost:5000/${hero}/image`);
-      this.setState(
-        {
-          image: getHero.data.url,
-          name: getHero.data.name,
-          id: getHero.data.id,
-        },
-        () => console.log(this.state)
-      );
+      this.setState({
+        image: getHero.data.url,
+        name: getHero.data.name,
+        id: getHero.data.id
+      }, () => console.log(this.state));
     } catch (error) {
       console.log(error);
     }
@@ -44,10 +41,10 @@ class TeamMember extends React.Component {
         {/* <button onClick={this.deleteHero()}>Delete Member</button> */}
         <img src={image} className='teamImg' />
         <br />
-        <div className='teamName'>{this.state.name}</div>
-        {this.props.team}
+        <div className='teamName'>
+          {this.state.name}</div>
       </div>
-    );
+    )
   }
 }
 
