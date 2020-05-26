@@ -10,9 +10,7 @@ const options = {
 const pgp = require('pg-promise')(options);
 
 // const connectionString = 'postgres://postgres:root@localhost:5432/MVP';
-
-const connect =
-  'postgres://jpyhcvccpkvrkm:c9d342d33e731f7f943b340d6827a7cc2098ab9e796f958f61e2e6df54078b59@ec2-52-20-248-222.compute-1.amazonaws.com:5432/dcbdaunr72t4sg';
+const connect = process.env.DATABASE_URL;
 console.log(connect);
 const db = pgp(connect);
 
