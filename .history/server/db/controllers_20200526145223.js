@@ -10,8 +10,11 @@ const options = {
 const pgp = require('pg-promise')(options);
 
 const connectionString = 'postgres://postgres:root@localhost:5432/MVP';
-const connect = process.env.DATABASE_URL;
-const db = pgp(connect);
+const connection = require('../../knexfile.js')[
+  process.env.NODE_ENV || 'development'
+];
+const database = require('knex')(connection);
+const db = pgp(database);
 
 function getTeam(req, res, next) {
   let heroArr = [];
