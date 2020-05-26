@@ -3,6 +3,7 @@ import axios from 'axios';
 import ReactModal from 'react-modal';
 import './Stats.scss';
 
+
 class Stats extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +14,7 @@ class Stats extends React.Component {
       speed: '',
       durability: '',
       power: '',
-      combat: '',
+      combat: ''
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -23,16 +24,14 @@ class Stats extends React.Component {
     if (prevProps.id !== this.props.id) {
       const { id } = this.props;
       try {
-        const getHero = await axios.get(
-          `http://localhost:4000/${id}/powerstats`
-        );
+        const getHero = await axios.get(`http://localhost:5000/${id}/powerstats`);
         this.setState({
           intelligence: getHero.data.intelligence,
           strength: getHero.data.strength,
           speed: getHero.data.speed,
           durability: getHero.durability,
           power: getHero.data.power,
-          combat: getHero.data.combat,
+          combat: getHero.data.combat
         });
       } catch (error) {
         console.log(error);
@@ -42,14 +41,14 @@ class Stats extends React.Component {
 
   openModal() {
     this.setState({
-      modalIsOpen: true,
-    });
+      modalIsOpen: true
+    })
   }
 
   closeModal() {
     this.setState({
-      modalIsOpen: false,
-    });
+      modalIsOpen: false
+    })
   }
 
   render() {
@@ -57,31 +56,34 @@ class Stats extends React.Component {
     return (
       <div className='Stats'>
         Stats
-        <button className='infoButton' onClick={this.openModal}>
-          +
-        </button>
+        <button className='infoButton' onClick={this.openModal}>+</button>
         <ReactModal
           isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          className='statModal'
-          overlayClassName='statOverlay'
-          contentLabel='Stat Modal'>
-          <button className='closeButton' onClick={this.closeModal}>
-            X
-          </button>
+          className="statModal"
+          overlayClassName="statOverlay"
+          contentLabel="Stat Modal"
+        >
+          <button className='closeButton' onClick={this.closeModal}>X</button>
           <div className='innerText'>
-            <div>Intelligence: {this.state.intelligence}</div>
+            <div>
+              Intelligence: {this.state.intelligence}</div>
             <br />
-            <div>Strength: {this.state.strength}</div>
+            <div>
+              Strength: {this.state.strength}</div>
             <br />
-            <div>Speed: {this.state.speed}</div>
+            <div>
+              Speed:  {this.state.speed}</div>
             <br />
-            <div>Durability: {this.state.durability}</div>
+            <div>
+              Durability: {this.state.durability}</div>
             <br />
-            <div>Power:{this.state.power}</div>
+            <div>
+              Power:{this.state.power}</div>
             <br />
-            <div>Combat: {this.state.combat}</div>
+            <div>
+              Combat: {this.state.combat}</div>
           </div>
         </ReactModal>
       </div>

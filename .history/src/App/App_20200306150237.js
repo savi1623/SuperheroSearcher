@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import SuperSearch from '../SuperSearch/SuperSearch.js';
 import Index from '../Index/Index.js';
-import Team from '../Team/Team.js';
+import Team from '../Team/Team.js'
 import ReactModal from 'react-modal';
 import './App.scss';
 
@@ -28,10 +28,10 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const getHero = await axios.get(`http://localhost:4000/team/team`);
+    const getHero = await axios.get(`http://localhost:5000/team/team`);
     // console.log(getHero.data);
     this.setState({
-      team: getHero.data.heros,
+      team: getHero.data.heros
     });
   }
 
@@ -39,9 +39,10 @@ class App extends React.Component {
     // this.setState({
     //   team: [...this.state.team, e]
     // })
-    axios
-      .post(`http://localhost:4000/team/${e}`)
-      .then(() => this.componentDidMount());
+    axios.post(`http://localhost:5000/team/${e}`)
+      .then(() =>
+        this.componentDidMount()
+      )
   }
 
   onChange(e) {
@@ -50,43 +51,43 @@ class App extends React.Component {
 
   changeHero(e) {
     // console.log(e)
-    this.setState({ hero: e }, () => this.openModal());
+    this.setState({ hero: e }, () => this.openModal())
   }
 
   openModal() {
     this.setState({
-      modalIsOpen: true,
-    });
+      modalIsOpen: true
+    })
   }
 
   closeModal() {
     this.setState({
-      modalIsOpen: false,
-    });
+      modalIsOpen: false
+    })
   }
 
   openTeam() {
     this.setState({
-      teamIsOpen: true,
-    });
+      teamIsOpen: true
+    })
   }
 
   closeTeam() {
     this.setState({
-      teamIsOpen: false,
-    });
+      teamIsOpen: false
+    })
   }
 
   openIndex() {
     this.setState({
-      indexOpen: true,
-    });
+      indexOpen: true
+    })
   }
 
   closeIndex() {
     this.setState({
-      indexOpen: false,
-    });
+      indexOpen: false
+    })
   }
 
   render() {
@@ -96,39 +97,29 @@ class App extends React.Component {
         <h1 className='logo'>Superhero Searcher</h1>
         <div className='searchForm'>
           <input className='searchBar' type='text' onChange={this.onChange} />
-          <button className='searchButton' onClick={this.openModal}>
-            Search
-          </button>
+          <button className='searchButton' onClick={this.openModal}>Search</button>
         </div>
         <div className='buttonInline'>
-          <button className='teamButton' onClick={this.openTeam}>
-            Show Team
-          </button>
-          <button className='indexButton' onClick={this.openIndex}>
-            {' '}
-            Hero Index
-          </button>
-        </div>
-        <ReactModal
-          isOpen={this.state.indexOpen}
+          <button className='teamButton' onClick={this.openTeam}>Show Team</button>
+          <button className='indexButton' onClick={this.openIndex}> Hero Index</button></div>
+        <ReactModal isOpen={this.state.indexOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeIndex}
-          className='indexModal'
-          overlayClassName='indexOverlay'
-          contentLabel='Index Modal'>
+          className="indexModal"
+          overlayClassName="indexOverlay"
+          contentLabel="Index Modal">
           <div className='outer'>
             <div className='inner'></div>
             <label onClick={this.closeIndex}>Back</label>
           </div>
-          <Index hero={this.state.hero} changeHero={this.changeHero} />{' '}
-        </ReactModal>
+          <Index hero={this.state.hero} changeHero={this.changeHero} /> </ReactModal>
         <ReactModal
           isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          className='searchModal'
-          overlayClassName='searchOverlay'
-          contentLabel='Search Modal'>
+          className="searchModal"
+          overlayClassName="searchOverlay"
+          contentLabel="Search Modal">
           <div className='outer'>
             <div className='inner'></div>
             <label onClick={this.closeModal}>Back</label>
@@ -139,9 +130,9 @@ class App extends React.Component {
           isOpen={this.state.teamIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeTeam}
-          className='TeamModal'
-          overlayClassName='TeamOverlay'
-          contentLabel='Team Modal'>
+          className="TeamModal"
+          overlayClassName="TeamOverlay"
+          contentLabel="Team Modal">
           <div className='outer'>
             <div className='inner'></div>
             <label onClick={this.closeTeam}>Back</label>

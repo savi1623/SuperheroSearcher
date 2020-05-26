@@ -7,25 +7,24 @@ import Work from '../Work/Work.js';
 import Connections from '../Connections/Connections.js';
 import './SuperInfo.scss';
 
+
 class SuperInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       superName: '',
-      fullName: '',
-    };
+      fullName: ''
+    }
   }
 
   async componentDidUpdate(prevProps) {
     if (prevProps.id !== this.props.id) {
       const { id } = this.props;
       try {
-        const getHero = await axios.get(
-          `http://localhost:4000/${id}/biography`
-        );
+        const getHero = await axios.get(`http://localhost:5000/${id}/biography`);
         this.setState({
           superName: getHero.data.name,
-          fullName: getHero.data['full-name'],
+          fullName: getHero.data['full-name']
         });
       } catch (error) {
         console.log(error);
@@ -33,13 +32,19 @@ class SuperInfo extends React.Component {
     }
   }
 
+
+
   render() {
     console.log(this.state.fullName);
     console.log(this.state.superName);
     return (
       <div className='SuperInfo'>
-        <div className='hero'>{this.state.superName}</div>
-        <div className='heroName'>{this.state.fullName}</div>
+        <div className='hero'>
+          {this.state.superName}
+        </div>
+        <div className='heroName'>
+          {this.state.fullName}
+        </div>
         <br />
         <Stats id={this.props.id} />
         <Biography id={this.props.id} />
@@ -47,12 +52,7 @@ class SuperInfo extends React.Component {
         <Work id={this.props.id} />
         <Connections id={this.props.id} />
         <br />
-        <button
-          className='addToTeam'
-          onClick={() => this.props.addToTeam(this.props.id)}>
-          {' '}
-          Add to Team{' '}
-        </button>
+        <button className='addToTeam' onClick={() => this.props.addToTeam(this.props.id)}>  Add to Team </button>
       </div>
     );
   }
