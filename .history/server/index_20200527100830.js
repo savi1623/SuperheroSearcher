@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const db = require('./db/controllers.js');
 const url = 'https://superheroapi.com/api/10217002715925793';
+require('dotenv').config();
 const port = 4000;
 app.use(bodyParser.json());
 app.use(cors());
