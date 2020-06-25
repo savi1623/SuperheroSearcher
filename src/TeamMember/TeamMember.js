@@ -18,6 +18,7 @@ class TeamMember extends React.Component {
     try {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       const getHero = await axios.get(`http://localhost:5000/${hero}/image`);
 <<<<<<< HEAD
 =======
@@ -34,6 +35,9 @@ class TeamMember extends React.Component {
 =======
       const getHero = await axios.get(`http://localhost:4000/${hero}/image`);
 >>>>>>> 4e75767... updated port numbers
+=======
+      const getHero = await axios.get(`http://localhost:4000/${hero}/image`);
+>>>>>>> 4e75767d8f02f591a48f56dfa68558d056804a81
       this.setState(
         {
           image: getHero.data.url,
@@ -42,7 +46,10 @@ class TeamMember extends React.Component {
         },
         () => console.log(this.state)
       );
+<<<<<<< HEAD
 >>>>>>> e127afb... added Knex as a way to connecto to heroku
+=======
+>>>>>>> 4e75767d8f02f591a48f56dfa68558d056804a81
     } catch (error) {
       console.log(error);
     }
