@@ -124,6 +124,4 @@ app.post('/team/:id', db.newMember);
 
 app.delete('/team/:id', db.deleteHero);
 
-app.listen(process.env.PORT || port, () =>
-  console.log(`Example app listening on port ${port}!`)
-);
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
